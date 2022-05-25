@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Video Modal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="btn">
+    <div class="play"></div>
+    <p>Play Video</p>
+  </div>
+  <div class="clip">
+    <!-- Video Attribution  
+      Video Source : https://www.pexels.com/
+    Video Url : https://www.pexels.com/video/close-up-view-of-a-butterfly-in-the-flower-6345271/ -->
+    <video src="video.mp4" controls="true"></video>
+    <b class="close">Close</b>
+  </div>
+  <script type="text/javascript">
+      let btn = document.querySelector(".btn");
+      let clip = document.querySelector(".clip");
+      let video = document.querySelector("video");
+      let close = document.querySelector(".close");
+      btn.onclick = function(){
+        btn.classList.add("active");
+        clip.classList.add("active");
+        video.currentTime = 0;
+        video.play();
+      }
+      close.onclick = function(){
+        btn.classList.remove("active");
+        clip.classList.remove("active");
+        video.pause(); 
+      }
+  </script>
+</body>
+</html>
